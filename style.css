@@ -1,0 +1,164 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+}
+
+:root {
+  --Light-gray: hsl(0, 0%, 81%);
+  --Light-grayish-blue: hsl(210, 46%, 95%);
+  --Moderate-violet: hsl(263, 55%, 52%);
+  --Very-dark-grayish-blue: hsl(217, 19%, 35%);
+  --Very-dark-lackish-blue: hsl(219, 29%, 14%);
+  --White: hsl(0, 0%, 100%);
+}
+
+body {
+  background-color: var(--Light-grayish-blue);
+}
+
+.container {
+  width: 90%;
+  max-width: 800px;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.6em;
+  margin: 10% auto;
+  line-height: 1.5;
+}
+
+/* utilities */
+.sub--container {
+  border-radius: 0.6em;
+  padding: 0.6em;
+  gap: 0.6rem;
+  display: flex;
+  flex-direction: column;
+}
+
+img {
+  width: 4%;
+  height: 4%;
+  padding: 1em;
+  border-radius: 100%;
+  border: 2px solid var(--White);
+}
+
+.header {
+  display: flex;
+  gap: 0.6em;
+}
+
+h1 {
+  font-size: 0.8rem;
+}
+
+h2 {
+  font-size: 0.6rem;
+}
+
+.violet--bg {
+  background-color: var(--Moderate-violet);
+  background-image: url(/images/bg-pattern-quotation.svg);
+  background-repeat: no-repeat;
+  background-size: 8%;
+  background-position-x: 80%;
+}
+
+.grey--bg {
+  background-color: var(--Very-dark-grayish-blue);
+}
+.white--bg {
+  background-color: var(--White);
+}
+
+.lackish--bg {
+  background-color: var(--Very-dark-lackish-blue);
+}
+
+.white-clr {
+  color: var(--White);
+}
+
+.grey-clr {
+  color: var(--Light-gray);
+}
+
+.blue-clr {
+  color: var(--Very-dark-grayish-blue);
+}
+.dark-clr {
+  color: var(--Very-dark-grayish-blue);
+}
+/*  */
+
+/* typography */
+.fs-large {
+  font-size: clamp(1rem, 1.2rem, 1.4rem);
+}
+
+.fs-smaller {
+  font-size: clamp(0.8rem, 1rem, 1.4rem);
+}
+/* queries */
+
+@media (width > 800px) {
+  .sub--container {
+    width: 100%;
+    transition: scale 350ms;
+  }
+
+  .sub--container:hover {
+    cursor: pointer;
+    scale: 1.08;
+  }
+  .col-1 {
+    grid-column: 1 /3;
+  }
+  .col-3 {
+    grid-column: 1/2;
+  }
+  .col-4 {
+    grid-column: 2/4;
+  }
+  .col-5 {
+    grid-column: 4/5;
+    grid-row: 1/3;
+  }
+}
+
+@media (width < 800px) {
+  .container {
+    width: 90%;
+    max-width: 800px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 1em;
+    margin: 10% auto;
+    line-height: 1.5;
+  }
+  .sub--container {
+    width: 100%;
+    transition: scale 350ms;
+  }
+
+  .sub--container:active {
+    scale: 1.2;
+  }
+}
+
+/*  */
+
+.attribution {
+  font-size: 11px;
+
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
